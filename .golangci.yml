@@ -1,0 +1,56 @@
+issues:
+  exclude-files:
+    - ".*_test\\.go$"
+  exclude:
+    - "the type name `ErrorResponse` should conform to the `XxxError` format"
+  exclude-rules:
+    - path: routes/
+      linters:
+        - tagliatelle
+        - dupword
+    - path: vault/
+      linters:
+        - tagliatelle
+    - path: csdd/
+      linters:
+        - tagliatelle
+
+linters-settings:
+  gci:
+    custom-order: true
+    sections:
+      - standard
+      - prefix(git.zzdats.lv/edim/api-mdl
+      - default
+
+linters:
+  presets:
+    - comment
+    - format
+    - bugs
+    - performance
+    - unused
+    - test
+    - sql
+    - style
+
+  enable:
+    - wsl
+
+  disable:
+    - godox
+    - tagalign
+    - exhaustruct
+    - depguard
+    - wrapcheck
+    - gochecknoinits
+    - varnamelen
+    - funlen
+    - ireturn
+    - mnd
+    - interfacebloat
+    - gochecknoglobals
+    - err113
+    - lll
+    - nilnil
+    - containedctx
